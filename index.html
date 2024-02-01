@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Sinh Viên</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .student {
+      text-align: center;
+      font-size: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #04AA6D;
+      margin-bottom: 16px;
+    }
+
+    #table-student {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #table-student td,
+    #table-student th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #table-student tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #table-student tr:hover {
+      background-color: #ddd;
+    }
+
+    #table-student th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    .form-infor {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .form-laber {
+      font-size: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 500;
+      color: #04AA6D;
+    }
+
+    .form-control {
+      width: 100%;
+      margin-top: 6px;
+      outline: none;
+      border: 1px solid #04AA6D;
+      padding: 16px 14px;
+      border-radius: 4px;
+    }
+
+    .form-ground {
+      margin-bottom: 20px;
+    }
+
+    .form-ground:last-child {
+      margin-bottom: 0;
+    }
+
+    .form-ground.invalid .form-control {
+      border-color: #f33a58;
+    }
+
+    .form-ground.invalid .form-message {
+      color: #f33a58;
+    }
+
+    .create-student {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      margin-left: -248px;
+    }
+
+    .create {
+      padding: 12px 20px;
+      background-color: #04AA6D;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 2px;
+    }
+
+    
+    .create:hover {
+      opacity: 0.8;
+    }
+
+    .delete:hover {
+      opacity: 0.8;
+    }
+
+    .delete {
+      padding: 6px 12px;
+      cursor: pointer;
+      background-color: #04AA6D;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .update {
+      padding: 6px 12px;
+      cursor: pointer;
+      background-color: rgb(226, 76, 136);
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="student">
+    <h1>Quản Lý Sinh Viên</h1>
+  </header>
+
+  <table id="table-student"></table>
+
+  <div class="form-infor">
+    <form action="" class="form" id="form-1">
+      <div class="form-ground">
+
+        <label for="masv" class="form-laber">
+          Mã Sinh Viên:
+        </label>
+
+        <input id="masv" name="masv" placeholder="VD: 56456516" class="form-control" type="text">
+
+        <span class="form-message"></span>
+
+      </div>
+
+      <div class="form-ground">
+
+        <label for="fullname" class="form-laber">
+          Họ Và Tên:
+        </label>
+
+        <input id="fullname" name="fullname" placeholder="VD: Nguyen Manh Hung" class="form-control" type="text">
+
+        <span class="form-message"></span>
+
+      </div>
+
+      <div class="form-ground">
+
+        <label for="date" class="form-laber">
+          Ngày Sinh:
+        </label>
+
+        <input id="date" name="date" placeholder="VD: 09/02/2003" class="form-control" type="date">
+
+        <span class="form-message"></span>
+
+      </div>
+
+      <div class="form-ground">
+
+        <label for="address" class="form-laber">
+          Địa Chỉ:
+        </label>
+
+        <input id="address" name="address" placeholder="VD: Ha Nam" class="form-control" type="text">
+
+        <span class="form-message"></span>
+
+      </div>
+
+      <div class="form-ground">
+
+        <label for="phoneNumber" class="form-laber">
+          Số Điện Thoại:
+        </label>
+
+        <input id="phone-number" name="phoneNumber" placeholder="VD: 0123456789" class="form-control" type="text">
+
+        <span class="form-message"></span>
+
+      </div>
+
+      <div class="form-ground">
+
+        <label for="fullname" class="form-laber">
+          Đầu Vào:
+        </label>
+
+        <input id="input" name="input" placeholder="VD: 10" class="form-control" type="text">
+
+        <span class="form-message"></span>
+
+      </div>
+    </form>
+  </div>
+
+  <div class="create-student">
+    <button class="create" id="create">Create</button>
+  </div>
+
+  <script src="./main.js"></script>
+  <script src="./form_validator.js"></script>
+
+
+  <script>
+    Validator({
+      form: '#form-1',
+      errorSelector: '.form-message',
+
+      rules: [
+        // isRequired: bắt buộc điền
+        Validator.isRequired('#fullname', 'Ho Ten Khong Duoc Nhap Qua 200 Ky Tu'),
+
+        Validator.isDate('#date', 'Nhap dung ngay, thang, nam sinh'),
+
+        Validator.isAddrest('#address', 'Que Quan Khong Duoc Nhap Qua 200 Ky Tu'),
+
+        Validator.isPhoneNumber('#phone-number', 'Số điện thoại đúng định dạng 11 ký tự bắt đầu là 0'),
+
+        Validator.isInput('#input', 'Điểm đầu vào phải từ 0 -> 10')
+      ]
+    });
+  </script>
+
+
+</body>
+
+</html>

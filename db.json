@@ -1,0 +1,67 @@
+{
+  "student": [
+    {
+      "id": 1,
+      "masv": 24564,
+      "name": "Nguyễn Văn A",
+      "date": "2003-02-03",
+      "address": "Ha Nam",
+      "phoneNumber": 45612378912,
+      "input": 8
+    },
+    {
+      "id": 2,
+      "masv": 24562,
+      "name": "Hoàng Thị Hồng B",
+      "date": "2003-07-03",
+      "address": "Ha Noi",
+      "phoneNumber": 45612378912,
+      "input": 7
+    },
+    {
+      "id": 3,
+      "masv": 24560,
+      "name": "Trần Van C",
+      "date": "2003-03-04",
+      "address": "Ha Nam",
+      "phoneNumber": 45612378912,
+      "input": 5
+    },
+    {
+      "id": 4,
+      "masv": 24566,
+      "name": "Hồ Xuân D",
+      "date": "2023-07-14",
+      "address": "Ha Noi",
+      "phoneNumber": 45612378912,
+      "input": 6
+    },
+    {
+      "id": 5,
+      "masv": 24564,
+      "name": "Nguyễn Manh E",
+      "date": "2003-07-13",
+      "address": "Ha Noi",
+      "phoneNumber": 45612378912,
+      "input": 7
+    },
+    {
+      "id": 6,
+      "masv": 24563,
+      "name": "Nguyễn Thị Linh G",
+      "date": "2003-02-19",
+      "address": "Ha Nam",
+      "phoneNumber": 45612378912,
+      "input": 8
+    },
+    {
+      "masv": "1564564",
+      "name": "Nguyen Manh Hung",
+      "date": "2003-05-14",
+      "address": "Ha Nam",
+      "phoneNumber": "54646464644",
+      "input": "10",
+      "id": 7
+    }
+  ]
+}
